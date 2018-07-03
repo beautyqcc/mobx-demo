@@ -4,6 +4,8 @@ import './App.css';
 import echarts from 'echarts'
 
 import {observer, inject} from 'mobx-react'
+import InputDemo from './component/Input'
+import {Link} from 'react-router-dom'
 
 
 @inject('greenStore','redStore')
@@ -138,7 +140,9 @@ class App extends Component {
 
                 </div>
                 <button onClick={this.props.redStore.changeTogreen}>换衣服</button><br/>
-             鞋子：   { this.props.greenStore.showse}
+             鞋子：   { this.props.greenStore.showse}<br/>
+                <InputDemo/>
+                <span> <Link to={{pathname:'/firstpage'}}>跳转到firstPage</Link></span>
             </div>
         );
     }
